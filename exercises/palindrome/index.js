@@ -7,6 +7,40 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+   return str.split('').every((char, i) => {
+       return char === str[str.length - i - 1];
+   });
+}
 
 module.exports = palindrome;
+
+// another option using every
+
+// function palindrome(str) {
+//     // reverse the string
+//      const rev = str.split('').reverse().join('');   //O(n)
+//      const isPalin = str == rev;
+   
+//      return isPalin;
+//  }
+
+// ====================================
+
+// // my answer
+// function palindrome(str) {
+//     let isPalin = true;
+  
+//     const n = str.length;
+//    // reverse the string
+//     const rev = str.split('').reverse().join('');   //O(n)
+   
+//     // compare with the original  
+//     for(let i = 0; i < n; i++){
+//         if (str.charAt(i) != rev.charAt(i)){
+//              isPalin = false;
+//              // break makes method slower, not sure why
+//         }
+//     }
+//   return isPalin;
+// }
